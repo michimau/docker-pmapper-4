@@ -1,8 +1,8 @@
-FROM centos:6.6
+FROM centos:7
 
 MAINTAINER michimau <mauro.michielon@eea.europa.eu>
 
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum install -y mapserver php php-mapserver httpd curl wget unzip vim  php-mbstring
 
 RUN wget http://www.pmapper.net/dl/pmapper-dev.zip
