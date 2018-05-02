@@ -15,7 +15,7 @@ RUN mv /demodata /var/www/html/pmapper_demodata
 
 RUN mkdir -p /var/www/html/tmp
 RUN chown -R www-data:www-data /var/www/html
-RUN chown -R www-data:www-data /var/log/httpd
+RUN chown -R www-data:www-data /var/log/apache2
 
 #to make http://localhost/pmapper/map_default.phtml to work out of the box
 RUN sed "s#/home/www/tmp/#/var/www/html/tmp/#g" -i /var/www/html/pmapper/config/default/pmapper_demo.map
