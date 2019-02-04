@@ -5,12 +5,11 @@ MAINTAINER michimau <mauro.michielon@eea.europa.eu>
 RUN apt-get -y update
 RUN apt-get install -y php5 libapache2-mod-php5 php5-mapscript apache2 cgi-mapserver mapserver-bin wget unzip
 
-RUN wget http://www.pmapper.net/dl/pmapper-dev.zip
+COPY pmapper-demodata-4.zip /pmapper-demodata-4.zip
+COPY pmapper-dev.zip /pmapper-dev.zip
 RUN unzip pmapper-dev.zip
 RUN cp -R /pmapper-dev/pmapper /var/www/html/
 
-COPY pmapper-demodata-4.zip /pmapper-demodata-4.zip
-COPY pmapper-dev.zip /pmapper-dev.zip
 RUN unzip pmapper-demodata-4.zip
 RUN mv /demodata /var/www/html/pmapper_demodata
 
