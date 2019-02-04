@@ -9,8 +9,9 @@ RUN wget http://www.pmapper.net/dl/pmapper-dev.zip
 RUN unzip pmapper-dev.zip
 RUN cp -R /pmapper-dev/pmapper /var/www/html/
 
-RUN wget https://netix.dl.sourceforge.net/project/pmapper/p.mapper%20demo%20data/p.mapper%20demo%20data%204/pmapper-demodata-4.zip
-RUN unzip pmapper-demodata-4.zip 
+COPY pmapper-demodata-4.zip /pmapper-demodata-4.zip
+COPY pmapper-dev.zip /pmapper-dev.zip
+RUN unzip pmapper-demodata-4.zip
 RUN mv /demodata /var/www/html/pmapper_demodata
 
 RUN mkdir -p /var/www/html/tmp
